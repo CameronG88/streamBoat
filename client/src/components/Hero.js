@@ -1,29 +1,42 @@
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap';
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { Container } from "react-bootstrap";
-import streamboat from '../images/streamboat.jpg'
+import '../css/Herosection.css'
+import { Link } from 'react-router-dom';
+import { Button, Icon } from "semantic-ui-react";
+import { useSelector } from "react-redux";
 
-class Hero extends React.Component {
-    render() {
-        let styles = {
-            "backgroundImage": 'url(' +  streamboat + ')',
-            "height": '200px',
-            
+const Hero = () => {
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+
+    const showLoginBtn = () => {
+        if (!isAuthenticated) {
+            return (
+                <Button color="black" animated secondary>
+                    <Button.Content visible>Login</Button.Content>
+                    <Button.Content hidden>
+                        <Icon name='arrow right' />
+                    </Button.Content>
+                </Button>
+            )
         }
-        return (
-            <Jumbotron fluid style={styles}>
-                <Container fluid={true}>
-                    <Row className="justify-content-center">
-                        <Col md={8} sm={10}>
-                            <p>Hero works</p>
-                        </Col>
-                    </Row>
-                </Container>
-            </Jumbotron>
-        );
     }
-}
 
+
+    return (
+        <div className='hero-container'>
+            <video src="/videos/video-1.mp4" autoPlay muted loop />
+            <h1>Bands&Notes AWAITS!</h1>
+            <p>What are you waiting for?</p>
+            <div className="hero-btns">
+                <Link to="/bandpage">
+                <Button className="btns">
+                    GET STARTED
+                </Button>
+                </Link>
+                <Link to="/login">
+                    {showLoginBtn()}
+                </Link>
+            </div>
+        </div>
+    )};
+    
 export default Hero;

@@ -1,74 +1,104 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import RocknRoll from '../images/RocknRoll.jpg'
+import HipHop from '../images/HipHop.jpg'
+import CountryMusic from '../images/CountryMusic.png'
+import MetalMusic from '../images/MetalMusic.jpeg'
+import PopMusic from '../images/PopMusic.jpg'
+import { Container } from "semantic-ui-react";
 
 export default class CarouselTile extends Component {
     render() {
         const settings = {
             className: "center",
-            centerMode: true,
             infinite: true,
-            centerPadding: "60px",
-            slidesToShow: 3,
+            centerPadding: "50px",
+            slidesToShow: 1,
             speed: 500,
             rows: 2,
-            slidesPerRow: 2
+            slidesPerRow: 2,
+            dots: true,
+            arrows: true,
+            focusOnSelect: true
         };
         return (
-            <div>
-                <h2>Multiple Rows</h2>
+            <Container style={{ backgroundColor: "#404245" }}>
+                <h2>Genres</h2>
                 <Slider {...settings}>
                     <div>
-                        <h3>1</h3>
+                        <img height={200} width={250}
+                            className="d-block w-100 text-center"
+                            src={RocknRoll}
+                            alt="First slide"
+                        />
                     </div>
                     <div>
-                        <h3>2</h3>
+                        <img height={200} width={250}
+                            className="d-block w-100 text-center"
+                            src={HipHop}
+                            alt="First slide"
+                        />
                     </div>
                     <div>
-                        <h3>3</h3>
+                        <img height={200} width={250}
+                            className="d-block w-100 text-center"
+                            src={CountryMusic}
+                            alt="First slide"
+                        />
                     </div>
                     <div>
-                        <h3>4</h3>
+                        <img height={200} width={250}
+                            className="d-block w-100 text-center"
+                            src={MetalMusic}
+                            alt="First slide"
+                        />
                     </div>
                     <div>
-                        <h3>5</h3>
+                        <img height={200} width={250}
+                            className="d-block w-100 text-center"
+                            src={PopMusic}
+                            alt="First slide"
+                        />
                     </div>
                     <div>
-                        <h3>6</h3>
+                        <img height={200} width={250}
+                            className="d-block w-100 text-center"
+                            src={MetalMusic}
+                            alt="First slide"
+                        />
                     </div>
                     <div>
-                        <h3>7</h3>
+                        <img height={200} width={250}
+                            className="d-block w-100 text-center"
+                            src={CountryMusic}
+                            alt="First slide"
+                        />
                     </div>
                     <div>
-                        <h3>8</h3>
+                        <img height={200} width={250}
+                            className="d-block w-100 text-center"
+                            src={MetalMusic}
+                            alt="First slide"
+                        />
                     </div>
                     <div>
-                        <h3>9</h3>
+                        <img height={200} width={250}
+                            className="d-block w-100 text-center"
+                            src={HipHop}
+                            alt="First slide"
+                        />
                     </div>
                     <div>
-                        <h3>10</h3>
-                    </div>
-                    <div>
-                        <h3>11</h3>
-                    </div>
-                    <div>
-                        <h3>12</h3>
-                    </div>
-                    <div>
-                        <h3>13</h3>
-                    </div>
-                    <div>
-                        <h3>14</h3>
-                    </div>
-                    <div>
-                        <h3>15</h3>
-                    </div>
-                    <div>
-                        <h3>16</h3>
+                        <img height={200} width={250}
+                            className="d-block w-100 text-center"
+                            src={RocknRoll}
+                            alt="First slide"
+                        />
                     </div>
                 </Slider>
-            </div>
+            </Container>
         );
     }
 }

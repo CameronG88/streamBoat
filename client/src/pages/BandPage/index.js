@@ -1,14 +1,16 @@
 import React from 'react';
+import BandHeaderImg from '../../components/BandHeaderImg'
+import AboutMe from '../../components/AboutMe'
 
-
-function BandPage(props) {
-    return(
-        <div>
-            <p>
-                BandPage page works
-            </p>
-        </div>
-    )
+class BandPage extends React.Component {
+    render() {
+        return (
+            <div>
+                <BandHeaderImg />
+                
+            </div>
+        )
+    }
 }
 
 export default BandPage;

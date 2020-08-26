@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState, setState } from 'react';
 import Hero from '../../components/Hero';
 import CarouselTile from '../../components/CarouselTile'
-import Slider from "react-slick";
+import { Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import DiscoverSearch from '../../components/DiscoverSearch'
+import API from '../../utils/API';
+import { Button } from 'semantic-ui-react';
 
 function Discover(props) {
-    return(
-        <div>
-            <Hero title={props.title} />
-            <CarouselTile />
-            <p>
-                Discover page works
-            </p>
+
+    return (
+       <div>
+            {/* <Hero /> */}
+            <DiscoverSearch />
+            {/* <CarouselTile /> */}
         </div>
     )
 }
